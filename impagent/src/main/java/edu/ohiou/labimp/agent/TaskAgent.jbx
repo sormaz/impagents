@@ -1,0 +1,10 @@
+[PropertyInfo]
+contents,Object,false,false, , ,true,<default>
+currentSA,ServiceAgent,false,false, , ,true,<default>
+info,IMPAgentInfo,false,false, , ,true,<default>
+saGUIdata,DefaultListModel,false,false, , ,false,<default>
+[IconNames]
+
+
+
+
