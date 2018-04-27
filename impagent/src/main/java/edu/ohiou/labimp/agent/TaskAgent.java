@@ -142,11 +142,11 @@ implements Serializable {
 
 	protected StreamClient search(int taskID)   {
 		StreamClient answer = null;
-		String localPort=properties.getProperty(
-				this.getClass().getName() +"."+this.getName()+ ".localPort");
+		String localPort=properties.getProperty(this.getClass().getName() +"."+this.getName()+ ".localPort");
 		if(localPort == null){
-			  localPort = properties.getProperty(this.getClass().getName() + ".localPort", "1112");
+			localPort = properties.getProperty(this.getClass().getName() + ".localPort", "1112");
 		}
+		System.out.println("Local port is set to " + localPort);
 		
 		StreamClient client = new StreamClient(Integer.parseInt(localPort));
 		

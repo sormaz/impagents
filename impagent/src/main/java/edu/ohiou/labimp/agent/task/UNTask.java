@@ -22,12 +22,6 @@ import java.util.LinkedList;
  *
  */
 public class UNTask extends CSGTask {
-	Triangle triangle = new Triangle(0,0,0,8,6.92,4);
-	
-	double minX = 0, minY = 0, maxX = 10, maxY = 10,  minR =2, maxR = 4, radius = 5;
-	double incrX = 0.03, incrY = 0.05, incrR = 0.01, originX = 0, originY = 0, alpha = 0, incrAlpha = 0.01;
-	int dirX = 1, dirY = 0, dirR = 1;
-
 	/**
 	 * 
 	 */
@@ -53,70 +47,7 @@ public class UNTask extends CSGTask {
 	public void run () {
 
 		while (true) {
-			
-		if((DrawObject)CSGAgent.inContents instanceof Triangle || (DrawObject)CSGAgent.inContents instanceof Star ){
-				Point2D.Double p = ((DrawObject)CSGAgent.inContents).gettPosition();
-				//Point2D.Double p = triangle.gettPosition();
-				if (p.x >= maxX) {
-					dirX = 0;
-					dirY = 1;
-				}
-				if (p.x <= minX && p.y > maxY) {
-					dirX = 0;
-					dirY = -1;
-				}
-				if (p.y >= maxY && p.x > maxX) {
-					dirY = 0;
-					dirX = -1;
-				}
-				if (p.y <= minY && p.x < minX) {
-					dirY = 0;
-					dirX = 1;
-				}
-				
-				//this.triangle.move (incrX * (double)dirX, incrY * (double)dirY);
-				
-				DrawObject draw= (DrawObject)CSGAgent.inContents;
-				draw.move (incrX * (double)dirX, incrY * (double)dirY);
-				((DrawObject)contents).repaint();
-			}
-			if((DrawObject)CSGAgent.inContents instanceof Circle ){
-				Point2D.Double p = ((Circle)CSGAgent.inContents).gettPosition();
-				double r = ((Circle)CSGAgent.inContents).getRadius();
-				if (r >= maxR) { 
-					dirR = -1;
-				}
-				if (r <= minR) {
-					dirR = 1;
-				}
-				if (p.x >= maxX) {
-					dirX = -1;
-				}
-				if (p.x <= minX) {
-					dirX = 1;
-				}
-				if (p.y >= maxY) {
-					dirY = -1;
-				}
-				if (p.y <= minY) {
-					dirY = 1;
-				}
-				
-				p.x += incrX * dirX;
-				p.y += incrY * dirY;
-				 ((Circle)CSGAgent.inContents).setRadius( r + incrR * dirR);
-				((DrawObject)contents).repaint();
-			}
-			if((DrawObject)CSGAgent.inContents instanceof Rectangle ){
-				Point2D.Double p = ((Rectangle)CSGAgent.inContents).gettPosition();
-
-
-				
-					p.x = originX + radius * cos (alpha);
-					p.y = originY + radius * sin (alpha);
-					alpha += incrAlpha;
-					((DrawObject)contents).repaint();
-			}
+			updateDrawing();
 			
 			try {
 				Thread.currentThread().sleep(10);
