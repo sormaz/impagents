@@ -70,7 +70,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
   public void settCanvas (Draw2DPanel param1) {
     canvas = param1;
   }
-  public JPanel gettCanvas () {
+  public JPanel geettCanvas () {
     return canvas;
   }
   public void paintComponent (Graphics param1) {
@@ -81,7 +81,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
   }
   abstract public Area getArea();
 
-  public LinkedList getStringList() {
+  public LinkedList geetStringList() {
     LinkedList strings = new LinkedList();
     strings.add(new DrawString("this is a test",10,10));
     strings.add(new DrawString("this is a resizable test", 20,20,0.5));
@@ -96,7 +96,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
 		// TODO Auto-generated method stub
 		
 	}
-	public Point2D.Double gettPosition() {
+	public Point2D.Double geettPosition() {
 		// TODO Auto-generated method stub
 		return position;
 	}
@@ -109,20 +109,20 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
  
 	    if (canvas instanceof Draw2DPanel) {
 	      Draw2DPanel drawPanel = (Draw2DPanel) canvas;
-	      drawPanel.addDrawShapes(Color.red, getDrawList());
-	      drawPanel.addFillShapes(Color.blue, getFillList());
+	      drawPanel.addDrawShapes(Color.red, geetDrawList());
+	      drawPanel.addFillShapes(Color.blue, geetFillList());
 	    }
 		
 	}
 	
 
-	public LinkedList getDrawList() {
+	public LinkedList geetDrawList() {
 		LinkedList list = new LinkedList();
 		list.add(getArea());
 		return list;
 	}
 	
-	public LinkedList getFillList() {
+	public LinkedList geetFillList() {
 		LinkedList list = new LinkedList();
 		list.add(getArea());
 		return list;
@@ -149,7 +149,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
   public void settPanel (JPanel param1) {
     this.panel = param1;
   }
-  public JPanel gettPanel() {
+  public JPanel geettPanel() {
     throw new java.lang.UnsupportedOperationException("Method not yet implemented");
   }
   public int getPanelLocation() {
@@ -174,7 +174,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
     else
       applet.getContentPane().add(panel,BorderLayout.CENTER);
   }
-  public Color gettColor() {
+  public Color geettColor() {
     throw new java.lang.UnsupportedOperationException("Method not yet implemented");
   }
   public void settColor(Color param1) {
@@ -205,10 +205,10 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
   public void settApplet (GUIApplet param1) {
     this.applet = (Draw2DApplet) param1;
   }
-  public GUIApplet gettApplet() {
+  public GUIApplet geettApplet() {
     return applet;
   }
-  public Dimension getAppletSize() {
+  public Dimension geetAppletSize() {
     try {
       if (canvas == null) {
 	return panel.getSize();
@@ -221,7 +221,7 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
 	return GUIApplet.defaultGUIAppletSize;
       }
     }
-  public Viewable gettGuiObject() {
+  public Viewable geettGuiObject() {
     throw new java.lang.UnsupportedOperationException("Method not yet implemented");
   }
   public void settGuiObject(Viewable param1) {
@@ -230,14 +230,14 @@ public abstract class DrawObject implements Viewable, Drawable2D, Serializable {
   }
   public void repaint() {
     try {
-      ((JPanel)this.gettCanvas()).repaint();
+      ((JPanel)this.geettCanvas()).repaint();
     }
     catch (NullPointerException e) {}
   }
   public abstract JPanel makeEditPanel();
   public abstract void update();
   
-  public GraphicsConfiguration getGraphicsConfig() {
+  public GraphicsConfiguration geetGraphicsConfig() {
 	  
 	  return new GraphicsConfiguration();
 	  

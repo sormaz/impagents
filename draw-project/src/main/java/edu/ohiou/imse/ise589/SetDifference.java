@@ -36,9 +36,9 @@ public class SetDifference extends BooleanNode {
 		return result;
 	}
 	
- 	public LinkedList getDrawList() {
-		LinkedList list = super.getDrawList();
-		list.addAll(right.getDrawList());
+ 	public LinkedList geetDrawList() {
+		LinkedList list = super.geetDrawList();
+		list.addAll(right.geetDrawList());
 		return list;
 	 	}
 

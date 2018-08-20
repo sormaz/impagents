@@ -53,7 +53,7 @@ public class IMPAgentViewer extends ViewObject{
   }
   
   //added by JING HUANG 
-  public LinkedList getDrawList(){
+  public LinkedList geetDrawList(){
 	  return drawList;
   }
   

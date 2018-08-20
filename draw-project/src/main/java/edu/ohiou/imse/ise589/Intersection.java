@@ -45,9 +45,9 @@ public class Intersection extends BooleanNode {
 		return result;
 	}
 	
-	 	public LinkedList getDrawList() {
-		LinkedList list = super.getDrawList();
-		list.addAll(left.getDrawList());
+	 	public LinkedList geetDrawList() {
+		LinkedList list = super.geetDrawList();
+		list.addAll(left.geetDrawList());
 //		list.addAll(right.getDrawList());
 		return list;
 	 	}

@@ -23,7 +23,7 @@ abstract public class CSGTask extends IMPTask implements Runnable {
 		DrawObject drawObj = (DrawObject)CSGAgent.inContents;
 		
 		if(drawObj instanceof Triangle || drawObj instanceof Star ){
-			Point2D.Double p = drawObj.gettPosition();
+			Point2D.Double p = drawObj.geettPosition();
 			if (p.x >= maxX) {
 				dirX = 0;
 				dirY = 1;
@@ -46,7 +46,7 @@ abstract public class CSGTask extends IMPTask implements Runnable {
 		}
 		
 		if(drawObj instanceof Circle ){
-			Point2D.Double p = drawObj.gettPosition();
+			Point2D.Double p = drawObj.geettPosition();
 			double r = ((Circle)CSGAgent.inContents).getRadius();
 			if (r >= maxR) { 
 				dirR = -1;
@@ -73,7 +73,7 @@ abstract public class CSGTask extends IMPTask implements Runnable {
 			((DrawObject)contents).repaint();
 		}
 		if(drawObj instanceof Rectangle ){
-			Point2D.Double p = drawObj.gettPosition();
+			Point2D.Double p = drawObj.geettPosition();
 			p.x = originX + radius * cos (alpha);
 			p.y = originY + radius * sin (alpha);
 			alpha += incrAlpha;
